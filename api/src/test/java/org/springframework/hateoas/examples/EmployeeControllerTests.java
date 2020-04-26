@@ -72,7 +72,7 @@ public class EmployeeControllerTests {
 				.andExpect(jsonPath("$._embedded.employees[1].role", is("burglar")))
 				.andExpect(jsonPath("$._embedded.employees[1]._links.self.href", is("http://localhost/employees/2")))
 				.andExpect(jsonPath("$._embedded.employees[1]._links.employees.href", is("http://localhost/employees")))
-				.andExpect(jsonPath("$._embedded.employees[1]._links.employees.title").doesNotExist())
+				.andExpect(jsonPath("$._embedded.employees[1]._links.employees.title",is("Employees title From module i18n")))
 				.andExpect(jsonPath("$._links.self.href", is("http://localhost/employees"))) //
 				.andReturn();
 	}
